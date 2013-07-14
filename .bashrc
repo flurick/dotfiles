@@ -4,13 +4,16 @@ export VISUAL=vim
 export EDITOR=vim
 
 i(){
-  sudo apt-get install
+  sudo apt-get install "$@"
+}
+
+s(){
+  apt-cache search "$@"
 }
 
 u(){
-  su -c"
-  apt-get update && 
-  apt-get upgrade &&
-  apt-get autoremove &&
-  apt-get clean
-";}
+  sudo apt-get update 
+  sudo apt-get upgrade
+  sudo apt-get autoremove
+  sudo apt-get clean
+}
